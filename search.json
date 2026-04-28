@@ -486,7 +486,7 @@
     "href": "index.html#pre-work",
     "title": "Mastering Clinical Data Summaries with {gtsummary}",
     "section": "Pre-work",
-    "text": "Pre-work\n\nBookmark this site. You’ll reference it throughout the workshop. \nSign up for a free Posit Cloud account.",
+    "text": "Pre-work\n\nBookmark this site. You’ll reference it throughout the workshop.\nRun install.packages(c(\"tidyverse\", \"gtsummary\", \"crane\")) in your local session.",
     "crumbs": [
       "Home"
     ]
