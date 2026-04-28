@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!slides/**/[0-9]*.qmd"
+  
+website:
+  page-navigation: true
+  title: "Mastering Clinical Data Summaries with {gtsummary}"
+  description: "Workshop@[R/Med 2026](https://rconsortium.github.io/RMedicine_website/)"
+  favicon: "images/gtsummary-logo.png"
+
+  repo-url: https://github.com/ddsjoberg/R-med-2026-gtsummary
+  repo-actions: [edit, issue]
+
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/). Inspired by [@minecr.bsky.social](https://bsky.app/profile/minecr.bsky.social)."
+    background: "#E2E2E2"
+
+  sidebar:
+    background: "#E2E2E2"
+    logo: "images/gtsummary-logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/ddsjoberg/R-med-2026-gtsummary
+        text: GitHub
+    style: docked
+    contents:
+     - href: index.qmd
+       text: Home
+     - href: communications.qmd
+       text: Communications
+     - href: license.qmd
+
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    toc: true
+    code-copy: true
+    code-overflow: scroll
+    mainfont: "Atkinson Hyperlegible"
+    highlight-style: a11y
+
+editor: source
+
