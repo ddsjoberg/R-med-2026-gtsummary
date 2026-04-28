@@ -1,7 +1,7 @@
 ---
 title: "Mastering Clinical Data Summaries with {gtsummary}"
 author: "Daniel D. Sjoberg, Shannon Pileggi"
-footer:  "[R/Medicine 2026 Workshop](https://github.com/ddsjoberg/R-med-2026-gtsummary/)"
+footer:  "[www.danieldsjoberg.com/R-med-2026-gtsummary](http://www.danieldsjoberg.com/R-med-2026-gtsummary/)"
 logo: "images/gtsummary-logo.png"
 editor: source
 format: 
