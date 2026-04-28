@@ -16,10 +16,10 @@ website:
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/). Inspired by [@minecr.bsky.social](https://bsky.app/profile/minecr.bsky.social)."
-    background: "#E2E2E2"
+    background: "#FFF1E0"
 
   sidebar:
-    background: "#E2E2E2"
+    background: "#FFF1E0"
     logo: "images/gtsummary-logo.png"
     pinned: true
     align: center
@@ -31,8 +31,6 @@ website:
     contents:
      - href: index.qmd
        text: Home
-     - href: communications.qmd
-       text: Communications
      - href: license.qmd
 
 format:

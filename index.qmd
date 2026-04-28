@@ -18,9 +18,9 @@ Lastly, we will review how this ecosystem naturally lends itself to Large Langua
 
 ## Pre-work
 
-- [ ] Bookmark this site. You'll reference it throughout the workshop.  <!-- [pos.it/pharmaverse_24](https://posit-conf-2024.github.io/pharmaverse/) -->
+- [ ] Bookmark this site. You'll reference it throughout the workshop.
 
-- [ ] Sign up for a *free* [Posit Cloud](https://posit.cloud/) account.
+- [ ] Run `install.packages(c("tidyverse", "gtsummary", "crane"))` in your local session.
 
 ## Slides
 
