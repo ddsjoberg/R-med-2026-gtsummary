@@ -15,7 +15,6 @@ In this seminar, attendees will learn about ARDs and how can fit into the larger
 
 Lastly, we will review how this ecosystem naturally lends itself to Large Language Models (LLMs). Because {gtsummary} is so widely adopted, LLMs can generate complex {gtsummary} code without additional training. Additionally, LLMs can readily interpret our structured ARDs to assist medical writers summarizing both simple and sophisticated trial results.
 
-
 ## Pre-work
 
 - [ ] Bookmark this site. You'll reference it throughout the workshop.
@@ -50,6 +49,13 @@ Daniel is the winner of the 2024 R in Pharma Brian Bole Award of Excellence and 
 [`r fontawesome::fa("linkedin", fill = "#606060")`](https://www.linkedin.com/in/ddsjoberg/)
 [`r fontawesome::fa("github", fill = "#606060")`](https://github.com/ddsjoberg/)
 
+![](images/shannon.png){style="float:left;padding: 0 10px 0 0;" fig-alt="Headshot of Shannon Pileggi" width="150"}
 
 **Shannon Pileggi (she/her)** is an Associate Directory of Data Science at The Prostate Cancer Clinical Trials Consortium, an occasional blogger, a frequent workshop instructor, and a member of the R-Ladies Leadership team.
 She enjoys automating data wrangling and data outputs, and making both data insights and learning new material digestible.
+
+<br>
+[`r fontawesome::fa("link", fill = "#606060")`](https://www.pipinghotdata.com/)
+[`r fontawesome::fa("bluesky", fill = "#606060")`](https://bsky.app/profile/pipinghotdata.com)
+[`r fontawesome::fa("linkedin", fill = "#606060")`](https://www.linkedin.com/in/shannon-m-pileggi/)
+[`r fontawesome::fa("github", fill = "#606060")`](https://github.com/shannonpileggi)
