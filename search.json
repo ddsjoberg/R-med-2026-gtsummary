@@ -540,6 +540,36 @@
     ]
   },
   {
+    "objectID": "exercises/exercises.html",
+    "href": "exercises/exercises.html",
+    "title": "Exercises + Solutions",
+    "section": "",
+    "text": "# Table Exercise: Demographic summary table using {gtsummary}\n\n# Create a Demography table split by treatment\n\n# Setup\n## Load necessary packages\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n## Import data\ndf_gtsummary_exercise &lt;- pharmaverseadam::adsl |&gt;\n  filter(SAFFL == \"Y\") |&gt;\n  left_join(\n    pharmaverseadam::advs |&gt;\n      filter(PARAMCD %in% c(\"BMI\", \"HEIGHT\", \"WEIGHT\"), !is.na(AVAL)) |&gt;\n      arrange(ADY) |&gt;\n      slice(1, .by = c(USUBJID, PARAMCD)) |&gt;\n      pivot_wider(id_cols = USUBJID, names_from = PARAMCD, values_from = AVAL),\n    by = \"USUBJID\"\n  ) |&gt;\n  select(USUBJID, TRT01A, AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT) |&gt;\n  labelled::set_variable_labels(\n    BMI = \"BMI\",\n    HEIGHT = \"Height, cm\",\n    WEIGHT = \"Weight, kg\"\n  )\n\n# 1. Use tbl_summary() to summarize AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT by TRT01A\n# 2. For all continuous variables, present the following stats: c(\"{mean} ({sd})\", \"{median} ({p25}, {p75})\", \"{min}, {max}\")\n# 3. Ensure the AGEGR1 levels are reported in the correct order\n# 4. View the ARD saved in the gtsummary table using `gather_ard()` function\n# BONUS!\n# 5. Add the header \"**Active Treatment**\" over the 'Xanomeline' treatments using the `modify_spanning_header()` function\n\ntbl &lt;-\n  df_gtsummary_exercise |&gt;\n  mutate(AGEGR1 = factor()) |&gt;\n  tbl_summary(\n    by = ,\n    include = ,\n    type = ,\n    statistic = ,\n    label =  # add a label for AGEGR1\n  ) |&gt;\n  # add a header above the 'Xanomeline' treatments. HINT: Use `show_header_names()` to know the column names\n  modify_spanning_header()\n\ntbl\n\n# extract the ARD from the table",
+    "crumbs": [
+      "Exercises + Solutions"
+    ]
+  },
+  {
+    "objectID": "exercises/exercises.html#tables-gtsummary.r",
+    "href": "exercises/exercises.html#tables-gtsummary.r",
+    "title": "Exercises + Solutions",
+    "section": "",
+    "text": "# Table Exercise: Demographic summary table using {gtsummary}\n\n# Create a Demography table split by treatment\n\n# Setup\n## Load necessary packages\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n## Import data\ndf_gtsummary_exercise &lt;- pharmaverseadam::adsl |&gt;\n  filter(SAFFL == \"Y\") |&gt;\n  left_join(\n    pharmaverseadam::advs |&gt;\n      filter(PARAMCD %in% c(\"BMI\", \"HEIGHT\", \"WEIGHT\"), !is.na(AVAL)) |&gt;\n      arrange(ADY) |&gt;\n      slice(1, .by = c(USUBJID, PARAMCD)) |&gt;\n      pivot_wider(id_cols = USUBJID, names_from = PARAMCD, values_from = AVAL),\n    by = \"USUBJID\"\n  ) |&gt;\n  select(USUBJID, TRT01A, AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT) |&gt;\n  labelled::set_variable_labels(\n    BMI = \"BMI\",\n    HEIGHT = \"Height, cm\",\n    WEIGHT = \"Weight, kg\"\n  )\n\n# 1. Use tbl_summary() to summarize AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT by TRT01A\n# 2. For all continuous variables, present the following stats: c(\"{mean} ({sd})\", \"{median} ({p25}, {p75})\", \"{min}, {max}\")\n# 3. Ensure the AGEGR1 levels are reported in the correct order\n# 4. View the ARD saved in the gtsummary table using `gather_ard()` function\n# BONUS!\n# 5. Add the header \"**Active Treatment**\" over the 'Xanomeline' treatments using the `modify_spanning_header()` function\n\ntbl &lt;-\n  df_gtsummary_exercise |&gt;\n  mutate(AGEGR1 = factor()) |&gt;\n  tbl_summary(\n    by = ,\n    include = ,\n    type = ,\n    statistic = ,\n    label =  # add a label for AGEGR1\n  ) |&gt;\n  # add a header above the 'Xanomeline' treatments. HINT: Use `show_header_names()` to know the column names\n  modify_spanning_header()\n\ntbl\n\n# extract the ARD from the table",
+    "crumbs": [
+      "Exercises + Solutions"
+    ]
+  },
+  {
+    "objectID": "exercises/exercises.html#tables-gtsummary.r-1",
+    "href": "exercises/exercises.html#tables-gtsummary.r-1",
+    "title": "Exercises + Solutions",
+    "section": "06-tables-gtsummary.R",
+    "text": "06-tables-gtsummary.R\n\n\n# Table Exercise: Demographic summary table using {gtsummary}\n\n# Create a Demography table split by treatment\n\n# Setup\n## Load necessary packages\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n## Import data\ndf_gtsummary_exercise &lt;- pharmaverseadam::adsl |&gt;\n  filter(SAFFL == \"Y\") |&gt;\n  left_join(\n    pharmaverseadam::advs |&gt;\n      filter(PARAMCD %in% c(\"BMI\", \"HEIGHT\", \"WEIGHT\"), !is.na(AVAL)) |&gt;\n      arrange(ADY) |&gt;\n      slice(1, .by = c(USUBJID, PARAMCD)) |&gt;\n      pivot_wider(id_cols = USUBJID, names_from = PARAMCD, values_from = AVAL),\n    by = \"USUBJID\"\n  ) |&gt;\n  select(USUBJID, TRT01A, AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT) |&gt;\n  labelled::set_variable_labels(\n    BMI = \"BMI\",\n    HEIGHT = \"Height, cm\",\n    WEIGHT = \"Weight, kg\"\n  )\n\n# 1. Use tbl_summary() to summarize AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT by TRT01A\n# 2. For all continuous variables, present the following stats: c(\"{mean} ({sd})\", \"{median} ({p25}, {p75})\", \"{min}, {max}\")\n# 3. Ensure the AGEGR1 levels are reported in the correct order\n# 4. View the ARD saved in the gtsummary table using `gather_ard()` function\n# BONUS!\n# 5. Add the header \"**Active Treatment**\" over the 'Xanomeline' treatments using the `modify_spanning_header()` function\n\n\ntbl &lt;-\n  df_gtsummary_exercise |&gt;\n  # ensure the age groups print in the correct order\n  mutate(AGEGR1 = factor(AGEGR1, levels = c(\"18-64\", \"&gt;64\"))) |&gt;\n  tbl_summary(\n    by = TRT01A,\n    include = c(AGE, AGEGR1, SEX, RACE, ETHNIC, BMI, HEIGHT, WEIGHT), \n    type = all_continuous() ~ \"continuous2\", # all continuous variables should be summarized as multi-row\n    statistic = all_continuous() ~ c(\"{mean} ({sd})\", \"{median} ({p25}, {p75})\", \"{min}, {max}\"), # change the statistics for all continuous variables\n    label = list(AGEGR1 = \"Age Group\"), # add a label for AGEGR1\n  ) |&gt;\n  # add a header above the 'Xanomeline' treatments. We used `show_header_names()` to know the column names\n  modify_spanning_header(c(stat_2, stat_3) ~ \"**Active Treatment**\")\n\ntbl\n\n# extract the ARD from the table\ngather_ard(tbl)",
+    "crumbs": [
+      "Exercises + Solutions"
+    ]
+  },
+  {
     "objectID": "license.html",
     "href": "license.html",
     "title": "License",
