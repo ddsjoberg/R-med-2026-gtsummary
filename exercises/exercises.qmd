@@ -1,0 +1,31 @@
+---
+title: "Exercises + Solutions"
+editor: source
+---
+
+# Exercises
+
+## `06-tables-gtsummary.R`
+
+```{r}
+#| echo: false
+#| class-output: "sourceCode r"
+
+"tables-gtsummary.R" |> 
+  readLines() |> 
+  cat(sep = "\n")
+```
+
+
+# Solutions
+
+## `06-tables-gtsummary.R`
+
+```{r}
+#| echo: false
+#| class-output: "sourceCode r"
+
+"answers/tables-gtsummary-answer.R" |> 
+  readLines() |> 
+  cat(sep = "\n")
+```
