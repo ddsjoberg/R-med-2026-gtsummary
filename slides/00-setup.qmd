@@ -43,6 +43,26 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 :::
 
 
+## Shannon Pileggi
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+`r fontawesome::fa("link", fill = fa_fill)` [pipinghotdata.com](https://www.pipinghotdata.com/)
+
+`r fontawesome::fa("bluesky", fill = fa_fill)` [@pipinghotdata.com](https://bsky.app/profile/pipinghotdata.com)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/shannon-m-pileggi](https://www.linkedin.com/in/shannon-m-pileggi/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
+:::
+
+::: {.column width="40%"}
+![](images/shannon-pileggi-circle.png)
+:::
+:::
+
+
+
 ## Questions
 
 ::: {.columns .v-center-container}
