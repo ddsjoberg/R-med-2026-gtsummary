@@ -15,11 +15,16 @@ In this seminar, attendees will learn about ARDs and how can fit into the larger
 
 Lastly, we will review how this ecosystem naturally lends itself to Large Language Models (LLMs). Because {gtsummary} is so widely adopted, LLMs can generate complex {gtsummary} code without additional training. Additionally, LLMs can readily interpret our structured ARDs to assist medical writers summarizing both simple and sophisticated trial results.
 
+## Prerequisites
+
+The workshop assumes a familiarity with R and the tidyverse.
+
+
 ## Pre-work
 
 - [ ] Bookmark this site. You'll reference it throughout the workshop.
 
-- [ ] Run `install.packages(c("tidyverse", "gtsummary", "crane"))` in your local session.
+- [ ] Run `install.packages(c("tidyverse", "gtsummary"))` in your local session.
 
 ## Slides
 

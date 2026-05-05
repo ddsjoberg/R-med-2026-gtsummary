@@ -420,7 +420,7 @@ adsl |>
 #| message: true
 tbl <- tbl_summary(adsl, by = "ARM", include = "AGE") |> add_p()
 names(tbl$cards)
-tbl$cards[["add_p"]][["AGE"]]
+gather_ard(tbl) |> purrr::pluck("add_p", "AGE")
 ```
 
 :::
@@ -434,13 +434,11 @@ See the documentation at <http://www.danieldsjoberg.com/gtsummary/reference/inde
 
 And a detailed `tbl_summary()` vignette at <http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html>
 
-## {gtsummary} Exercise 1
+## {gtsummary} Exercise 
 
-1. Navigate to Posit Cloud script `04-gtsummary_exercise1.R`.
+1. Navigate to [www.danieldsjoberg.com/R-med-2026-gtsummary/exercises/exercises.html](https://www.danieldsjoberg.com/R-med-2026-gtsummary/exercises/exercises.html).
 
 2. Create the table outlined in the script.
-
-3. Add the "completed" sticky note to your laptop when complete.
 
 ```{r}
 #| echo: false

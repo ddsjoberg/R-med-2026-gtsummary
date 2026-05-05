@@ -74,7 +74,7 @@ tbl_strata(
 
 ::: small
 
-- Most of the tables we create in the pharma space come from a catalog of standard tables.
+- Most of the tables we create in the medical space are somewhat standard, e.g. Table 1 in your publication, adverse events, etc.
 
 - Custom or one-off tables are often quite difficult and time intensive to create.
 
