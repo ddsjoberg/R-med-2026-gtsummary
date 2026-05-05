@@ -158,7 +158,7 @@
     "href": "slides/index.html#where-are-the-ards",
     "title": "Mastering Clinical Data Summaries with {gtsummary}",
     "section": "Where are the ARDs?",
-    "text": "Where are the ARDs?\n\n\n\nARDs are the backbone for all calculations in gtsummary\nEvery gtsummary table saves the ARDs from each calculation\nThey can be extracted individually, or combined.\n\n\n\ntbl &lt;- tbl_summary(adsl, by = \"ARM\", include = \"AGE\") |&gt; add_p()\nnames(tbl$cards)\n\n[1] \"tbl_summary\" \"add_p\"      \n\ntbl$cards[[\"add_p\"]][[\"AGE\"]]\n\n{cards} data frame: 4 x 9\n\n\n  group1 variable   context stat_name stat_label      stat\n1    ARM      AGE stats_kr… statistic  Kruskal-…     1.635\n2    ARM      AGE stats_kr…   p.value    p-value     0.442\n3    ARM      AGE stats_kr… parameter  Degrees …         2\n4    ARM      AGE stats_kr…    method     method Kruskal-…\n\n\nℹ 3 more variables: fmt_fun, warning, error"
+    "text": "Where are the ARDs?\n\n\n\nARDs are the backbone for all calculations in gtsummary\nEvery gtsummary table saves the ARDs from each calculation\nThey can be extracted individually, or combined.\n\n\n\ntbl &lt;- tbl_summary(adsl, by = \"ARM\", include = \"AGE\") |&gt; add_p()\nnames(tbl$cards)\n\n[1] \"tbl_summary\" \"add_p\"      \n\ngather_ard(tbl) |&gt; purrr::pluck(\"add_p\", \"AGE\")\n\n{cards} data frame: 4 x 9\n\n\n  group1 variable   context stat_name stat_label      stat\n1    ARM      AGE stats_kr… statistic  Kruskal-…     1.635\n2    ARM      AGE stats_kr…   p.value    p-value     0.442\n3    ARM      AGE stats_kr… parameter  Degrees …         2\n4    ARM      AGE stats_kr…    method     method Kruskal-…\n\n\nℹ 3 more variables: fmt_fun, warning, error"
   },
   {
     "objectID": "slides/index.html#add-on-functions-in-gtsummary-1",
@@ -168,11 +168,11 @@
     "text": "Add-on functions in {gtsummary}\nAnd many more!\nSee the documentation at http://www.danieldsjoberg.com/gtsummary/reference/index.html\nAnd a detailed tbl_summary() vignette at http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html"
   },
   {
-    "objectID": "slides/index.html#gtsummary-exercise-1",
-    "href": "slides/index.html#gtsummary-exercise-1",
+    "objectID": "slides/index.html#gtsummary-exercise",
+    "href": "slides/index.html#gtsummary-exercise",
     "title": "Mastering Clinical Data Summaries with {gtsummary}",
-    "section": "{gtsummary} Exercise 1",
-    "text": "{gtsummary} Exercise 1\n\nNavigate to Posit Cloud script 04-gtsummary_exercise1.R.\nCreate the table outlined in the script.\nAdd the “completed” sticky note to your laptop when complete."
+    "section": "{gtsummary} Exercise",
+    "text": "{gtsummary} Exercise\n\nNavigate to www.danieldsjoberg.com/R-med-2026-gtsummary/exercises/exercises.html.\nCreate the table outlined in the script."
   },
   {
     "objectID": "slides/index.html#adverse-event-reporting-and-friends",
@@ -249,7 +249,7 @@
     "href": "slides/index.html#cobbling-tables-together",
     "title": "Mastering Clinical Data Summaries with {gtsummary}",
     "section": "Cobbling Tables Together",
-    "text": "Cobbling Tables Together\n\n\nMost of the tables we create in the pharma space come from a catalog of standard tables.\nCustom or one-off tables are often quite difficult and time intensive to create.\nThe {gtsummary} package makes it simple to break complex tables into their simple parts and cobble them together in the end.\nMoreover, the internal structure of a gtsummary table is super simple: a data frame and instructions on how to print that data frame to make it cute. If needed, you can directly modify the underlying data frame with modify_table_body().\n\n\n\nadsl |&gt; tbl_summary(include = c(AGE, ETHNIC), by = ARM) |&gt; purrr::pluck(\"table_body\")\n\n# A tibble: 4 × 8\n  variable var_type    row_type var_label label                  stat_1      stat_2      stat_3     \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;                  &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;      \n1 AGE      continuous  label    Age       Age                    76 (69, 82) 76 (71, 80) 78 (71, 82)\n2 ETHNIC   categorical label    Ethnicity Ethnicity              &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;       \n3 ETHNIC   categorical level    Ethnicity HISPANIC OR LATINO     3 (3.5%)    3 (3.6%)    6 (7.1%)   \n4 ETHNIC   categorical level    Ethnicity NOT HISPANIC OR LATINO 83 (97%)    81 (96%)    78 (93%)"
+    "text": "Cobbling Tables Together\n\n\nMost of the tables we create in the medical space are somewhat standard, e.g. Table 1 in your publication, adverse events, etc.\nCustom or one-off tables are often quite difficult and time intensive to create.\nThe {gtsummary} package makes it simple to break complex tables into their simple parts and cobble them together in the end.\nMoreover, the internal structure of a gtsummary table is super simple: a data frame and instructions on how to print that data frame to make it cute. If needed, you can directly modify the underlying data frame with modify_table_body().\n\n\n\nadsl |&gt; tbl_summary(include = c(AGE, ETHNIC), by = ARM) |&gt; purrr::pluck(\"table_body\")\n\n# A tibble: 4 × 8\n  variable var_type    row_type var_label label                  stat_1      stat_2      stat_3     \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;                  &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;      \n1 AGE      continuous  label    Age       Age                    76 (69, 82) 76 (71, 80) 78 (71, 82)\n2 ETHNIC   categorical label    Ethnicity Ethnicity              &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;       \n3 ETHNIC   categorical level    Ethnicity HISPANIC OR LATINO     3 (3.5%)    3 (3.6%)    6 (7.1%)   \n4 ETHNIC   categorical level    Ethnicity NOT HISPANIC OR LATINO 83 (97%)    81 (96%)    78 (93%)"
   },
   {
     "objectID": "slides/index.html#ard-first-tables-1",
@@ -517,11 +517,21 @@
     ]
   },
   {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Mastering Clinical Data Summaries with {gtsummary}",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThe workshop assumes a familiarity with R and the tidyverse.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "index.html#pre-work",
     "href": "index.html#pre-work",
     "title": "Mastering Clinical Data Summaries with {gtsummary}",
     "section": "Pre-work",
-    "text": "Pre-work\n\nBookmark this site. You’ll reference it throughout the workshop.\nRun install.packages(c(\"tidyverse\", \"gtsummary\", \"crane\")) in your local session.",
+    "text": "Pre-work\n\nBookmark this site. You’ll reference it throughout the workshop.\nRun install.packages(c(\"tidyverse\", \"gtsummary\")) in your local session.",
     "crumbs": [
       "Home"
     ]
