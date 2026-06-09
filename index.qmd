@@ -15,6 +15,10 @@ In this seminar, attendees will learn about ARDs and how can fit into the larger
 
 Lastly, we will review how this ecosystem naturally lends itself to Large Language Models (LLMs). Because {gtsummary} is so widely adopted, LLMs can generate complex {gtsummary} code without additional training. Additionally, LLMs can readily interpret our structured ARDs to assist medical writers summarizing both simple and sophisticated trial results.
 
+## Recording
+
+Recording available on [youtube](https://youtu.be/Qo2HwDxw1fM?si=ix1vSmEn_1aL6OZ1) (1 hour 50 minutes).
+
 ## Prerequisites
 
 The workshop assumes a familiarity with R and the tidyverse.
